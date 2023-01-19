@@ -16,5 +16,5 @@ const views = require('./routes/view')(app)
 
 // Rutas para el bakend
 
-app.listen(3000)
-console.log('Hi, im listening on port: 3000')
+app.listen(process.env.PORT)
+console.log(`Hi, im listening on port: ${process.env.PORT}`)
