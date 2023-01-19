@@ -5,8 +5,12 @@ const url = 'https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?WSDL'
 var args = {}
 
 const showMain = (request, response) => {
-    response.render('page/main')
+    response.render('page/main', {mssg: ''})
 
+}
+
+const showFilter = (request, response) => {
+    response.render('page/filter')
 }
 
 const showCoins = async (request, response) => {
@@ -28,5 +32,6 @@ const showCoins = async (request, response) => {
 
 module.exports = {
     showMain,
-    showCoins
+    showCoins,
+    showFilter
 }

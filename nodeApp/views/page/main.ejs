@@ -9,7 +9,15 @@
             <div class="card-body">
               <h5 class="card-title">Consultas</h5>
               <p class="card-text">Deseas ver la tasa de cambio para Guatemala y Costa Rica?</p>
-              <a href="/tasa/cambio" class="btn btn-primary">Presiona aqui</a>
+              <a href="/tasa/cambio" class="btn btn-primary">Ver en tiempo real</a>
+              <a href="/moneda/ver/pais/1" class="btn btn-primary">Historial Guatemala</a>
+              <a href="/moneda/ver/pais/2" class="btn btn-primary">Historial Costa Rica</a>
+              <a href="/filtros" class="btn btn-primary">Filtrar por fechas</a>
+            <% if (mssg) { %>
+              <blockquote class="blockquote mb-0" style="margin-top: 20px;">
+                <footer class="blockquote-footer"><%= mssg %></footer>
+              </blockquote>
+            <%} %>
             </div>
           </div>
     </div>

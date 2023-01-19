@@ -16,10 +16,21 @@
                     <div class="row">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <span class="badge text-bg-success">Compra</span>
-                                Q <%= gt.referencia.toFixed(2) %>
+                                <div>
+                                    <span class="badge text-bg-success">Compra</span>
+                                    Q <%= gt.referencia.toFixed(2) %>
+                                </div>
                             </li>
                         </ul>
+                    </div>
+                    <div class="row">
+                        <form action="/moneda/agregar/pais" method="POST">
+                            <input id="pais_idPais" name="pais_idPais" value="1" hidden>
+                            <input id="venta" name="venta"  value="<%= gt.referencia.toFixed(2) %>" hidden>
+                            <input id="compra" name="compra"  value="<%= gt.referencia.toFixed(2) %>" hidden>
+                            <input id="fecha" name="fecha" value="<%= gt.fecha %>" hidden>
+                            <button type="submit" class="btn btn-outline-primary" style="margin-left: 5px; margin-top: 7px;">Guardar</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -35,6 +46,17 @@
                                 <%= cr.compra.valor %> ₡
                             </li>
                         </ul>
+                      </div>
+                      <div class="row">
+                        <div class="row">
+                            <form action="/moneda/agregar/pais" method="POST">
+                                <input id="pais_idPais" name="pais_idPais" value="2" hidden>
+                                <input id="venta" name="venta"  value="<%= cr.venta.valor %>" hidden>
+                                <input id="compra" name="compra"  value="<%= cr.compra.valor %>" hidden>
+                                <input id="fecha" name="fecha" value="<%= gt.fecha %>" hidden>
+                                <button type="submit" class="btn btn-outline-primary" style="margin-left: 5px; margin-top: 7px;">Guardar</button>
+                            </form>
+                        </div>
                       </div>
                   </div>
             </div>

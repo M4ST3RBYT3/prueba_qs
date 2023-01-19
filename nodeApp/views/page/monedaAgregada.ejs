@@ -1,0 +1,41 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/nav'); %>
+
+    <div class="container">
+        <div class="card" style="margin-top: 6%;">
+            <div class="card-header">
+                Informacion registrada <%= data.fecha %>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="card-title">Se guardo la siguiente informacion</h5>
+                </div>
+              <div class="row">
+                  <div class="col-md-6">
+                    <% if (data.pais_idPais == 1) { %>
+                        <div class="row">Guatemala</div>
+                    <% } %>
+                    <% if (data.pais_idPais == 2) { %>
+                        <div class="row">Costa Rica</div>
+                    <% } %>
+                    <div class="row">
+                        <form ction="/moneda/actualizar/<%= idM %>" method="PUT">
+                            <input id="pais_idPais" name="pais_idPais" value="data.pais_idPais" hidden>
+                            <div class="mb-3">
+                              <label for="venta" class="form-label">Venta</label>
+                              <input type="text" class="form-control" id="venta" name="venta"  value="<%= data.venta %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="compra" class="form-label">Compra</label>
+                              <input type="text" class="form-control"  id="compra" name="compra"  value="<%= data.compra %>">
+                            </div>
+                            <input id="fecha" name="fecha" value="<%= data.fecha %>" hidden>
+                            <a href="/">Volver al menu</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+    </div>
+<%- include('../partials/foot'); %>

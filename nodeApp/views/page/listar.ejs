@@ -1,0 +1,42 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/nav'); %>
+
+<div class="container">
+    <div class="card" style="margin-top: 6%;">
+        <div class="card-header">
+            Historial
+        </div>
+        <div class="card-body">
+          <div class="row">
+              <div class="col-md-6">
+                    <div class="row">Tasa de cambio</div>
+                <div class="row">
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Venta</th>
+                            <th scope="col">Compra</th>
+                            <th scope="col">Pais</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <% data.forEach((coin)=>{ %>
+                            <tr>
+                                <td><%= coin.fecha %></td>
+                                <td><%= coin.venta %></td>
+                                <td><%= coin.compra %></td>
+                                <td><%= coin.nombre %></td>
+                              </tr>
+                        <% }) %>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+</div>
+
+<%- include('../partials/foot'); %>

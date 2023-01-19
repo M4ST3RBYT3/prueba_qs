@@ -1,0 +1,50 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/nav'); %>
+
+<div class="container">
+    <div class="card" style="margin-top: 6%;">
+        <div class="card-header">
+            Historial
+        </div>
+        <div class="card-body">
+          <div class="row">
+              <div class="col-md-6">
+                <% if (id == 1) { %>
+                    <div class="row">Guatemala</div>
+                <% } %>
+                <% if (id == 2) { %>
+                    <div class="row">Costa Rica</div>
+                <% } %>
+                <div class="row">
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Venta</th>
+                            <th scope="col">Compra</th>
+                            <th scope="col">Accion</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <% data.forEach((coin)=>{ %>
+                            <tr>
+                                <td><%= coin.fecha %></td>
+                                <td><%= coin.venta %></td>
+                                <td><%= coin.compra %></td>
+                                <td>
+                                    <a href="/moneda/eliminar/<%= coin.id %>" class="btn btn-danger">Eliminar</a>
+                                    <a href="/moneda/ver/<%= coin.id %>" class="btn btn-warning">Actualizar</a>
+                                </td>
+                              </tr>
+                        <% }) %>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+</div>
+
+<%- include('../partials/foot'); %>
