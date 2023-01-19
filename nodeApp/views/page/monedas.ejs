@@ -1,0 +1,44 @@
+<%- include('../partials/head'); %>
+<%- include('../partials/nav'); %>
+
+    <div class="container">
+        <div class="card" style="margin-top: 6%;">
+            <div class="card-header">
+              Tasa de cambio
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="card-title">Esta es la tasa de cambio para hoy <%= gt.fecha %></h5>
+                </div>
+              <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">Guatemala</div>
+                    <div class="row">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge text-bg-success">Compra</span>
+                                <%= gt.referencia %> Q
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                      <div class="row">Costa Rica</div>
+                      <div class="row">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge text-bg-success">Compra</span>
+                                <%= cr.venta.valor %> ₡
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge text-bg-danger">Venta</span>
+                                <%= cr.compra.valor %> ₡
+                            </li>
+                        </ul>
+                      </div>
+                  </div>
+            </div>
+            </div>
+          </div>
+    </div>
+<%- include('../partials/foot'); %>
